@@ -16,7 +16,7 @@ st.image('https://cdn.images.express.co.uk/img/dynamic/24/750x445/1075641.jpg')
 # Write heading for Data
 st.header('Data')
 # Read csv file and output a sample of 20 data points
-df_gas_price = pd.read_csv('/Users/sebastian/Documents/spiced_projects/final_project/data_diesel_ritter.csv')
+df_gas_price = pd.read_csv('/data_diesel_ritter.csv')
 st.write('Display a sample of data points from `penguin`', df_gas_price.sample(20))
 # Add a selectbox for species
 #prices = st.selectbox('Choose a type of gas', df_gas_price['diesel','e5','e10'].unique())
