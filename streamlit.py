@@ -19,7 +19,7 @@ st.header('Data')
 df_gas_price = pd.read_csv('/Users/sebastian/Documents/spiced_projects/final_project/data_diesel_ritter.csv')
 st.write('Display a sample of data points from `penguin`', df_gas_price.sample(20))
 # Add a selectbox for species
-prices = st.selectbox('Choose a type of gas', df_gas_price['diesel','e5','e10'].unique())
+#prices = st.selectbox('Choose a type of gas', df_gas_price['diesel','e5','e10'].unique())
 # Display a sample of 20 data points according to the species selected with corresponding title
 # df_species = df_gas_price.loc[df_gas_price[0]==prices]
 # st.write(f'Subset of data for {species}',df_species)
