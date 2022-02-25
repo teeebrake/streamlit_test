@@ -20,7 +20,7 @@ df_gas_price = pd.read_csv('data_diesel_ritter.csv', sep=',')
 st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.sample(20))
 # Add a selectbox for type of fuel/gas
 
-gas_type = st.selectbox('Choose a type of gas',['diesel']['e5']['e10'])
+gas_type = st.selectbox('Choose a type of gas',['diesel','e5','e10'])
 # Display a sample of 20 data points according to the species selected with corresponding title
 df_gas_price = df_gas_price.loc[df_gas_price[0]==gas_type]
 st.write(f'Subset of data for {gas_type}',df_gas_price)
