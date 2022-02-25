@@ -22,7 +22,7 @@ st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.
 
 gas_type = st.selectbox('Choose a type of gas',['diesel','e5','e10'])
 # Display a sample of 20 data points according to the species selected with corresponding title
-df_gas_price = df_gas_price.loc[df_gas_price[:,]==gas_type]
+df_gas_price = df_gas_price.loc[df_gas_price[:,'gas_type']]
 st.write(f'Subset of data for {gas_type}',df_gas_price)
 # # Plotting seaborn
 # st.subheader('Plotting')
