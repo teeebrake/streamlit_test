@@ -18,11 +18,12 @@ st.header('Data')
 # Read csv file and output a sample of 20 data points
 df_gas_price = pd.read_csv('data_diesel_ritter.csv', sep=',')
 st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.sample(20))
-# Add a selectbox for species
-prices = st.selectbox('Choose a type of gas', df_gas_price(['diesel']['e5']['e10'].unique()))
+# Add a selectbox for type of fuel/gas
+
+gas_type = st.selectbox('Choose a type of gas',['diesel']['e5']['e10'])
 # Display a sample of 20 data points according to the species selected with corresponding title
-# df_species = df_gas_price.loc[df_gas_price[0]==prices]
-# st.write(f'Subset of data for {species}',df_species)
+df_gas_price = df_gas_price.loc[df_gas_price[0]==gas_type]
+st.write(f'Subset of data for {gas_type}',df_gas_price)
 # # Plotting seaborn
 # st.subheader('Plotting')
 # fig, ax=plt.subplots()
