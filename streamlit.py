@@ -16,7 +16,7 @@ st.image('https://cdn.images.express.co.uk/img/dynamic/24/750x445/1075641.jpg')
 # Write heading for Data
 st.header('Data')
 # Read csv file and output a sample of 20 data points
-df_gas_price = pd.read_csv('data_diesel_ritter.csv', sep=',')
+df_gas_price = pd.read_csv('ritter_all_14_22.csv', sep=',')
 st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.sample(20))
 # Add a selectbox for type of fuel/gas
 
