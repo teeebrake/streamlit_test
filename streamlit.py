@@ -26,7 +26,7 @@ response = requests.get(search_api_url, headers=headers, params=params, timeout=
 #print(response.headers)
 
 data_dict = response.json()
-current_time = datetime.datetime.now().time().strftime('%Y-%m-%d %H:%M:%S')
+current_time = datetime.datetime.now().time().strftime('%H:%M:%S')
 #time.sleep(60)
         
 # Write a title
