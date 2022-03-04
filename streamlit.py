@@ -57,7 +57,7 @@ st.write(f'Subset of data for {gas_type}',df_gas_price)
 # # Plotting seaborn
 st.subheader('Plotting')
 fig, ax=plt.subplots()
-ax = sns.scatterplot(data = df_gas_price, x='date', y='e10')
+ax = sns.lineplot(data = df_gas_price)
 #ax = sns.scatterplot(data = df_gas_price, x='date', y='e10', size='sex')
 st.pyplot(fig)
 # # Plotting plotly
