@@ -10,25 +10,24 @@ import requests
 import time
 
 #while True:
-        #connect to tankerkoenig.de api and retrieve live infos, store them in a dictionary
+#connect to tankerkoenig.de api and retrieve live infos, store them in a dictionary
+api_key = 'dc0d5dcb-4386-6f2a-74df-83221c34fd55'
 
-        api_key = 'dc0d5dcb-4386-6f2a-74df-83221c34fd55'
-
-        headers = {'Authorization': 'Bearer {}'.format(api_key)}
-        search_api_url = 'https://creativecommons.tankerkoenig.de/json/prices.php?'
-        params = {'ids': '813ed58c-b58d-4d17-895b-2078cb302649',
-                'apikey': 'dc0d5dcb-4386-6f2a-74df-83221c34fd55',
+headers = {'Authorization': 'Bearer {}'.format(api_key)}
+search_api_url = 'https://creativecommons.tankerkoenig.de/json/prices.php?'
+params = {'ids': '813ed58c-b58d-4d17-895b-2078cb302649',
+        'apikey': 'dc0d5dcb-4386-6f2a-74df-83221c34fd55',
                   }
 
-        response = requests.get(search_api_url, headers=headers, params=params, timeout=5)
+response = requests.get(search_api_url, headers=headers, params=params, timeout=5)
 
-        print(response.url)
-        print(response.status_code)
-        print(response.headers)
+#print(response.url)
+#print(response.status_code)
+#print(response.headers)
 
-        data_dict = response.json()
-        current_time = datetime.datetime.now().time()
-        #time.sleep(60)
+data_dict = response.json()
+current_time = datetime.datetime.now().time()
+#time.sleep(60)
         
 # Write a title
 st.write('Gas Price Explorer')
