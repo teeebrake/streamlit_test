@@ -45,7 +45,7 @@ st.write (f'At {current_time} price of Diesel at Ritterstraße', data_dict['pric
 # Write heading for Data
 st.header('Data')
 # Read csv file and output a sample of 20 data points
-df_gas_price = pd.read_csv('ritter_all_streamlit.csv', sep=',')
+df_gas_price = pd.read_csv('ritter_all_streamlit_daily.csv', sep=',')
 st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.sample(20))
 #st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.sample(20))
 # Add a selectbox for type of fuel/gas
@@ -57,7 +57,7 @@ st.write(f'Subset of data for {gas_type}',df_gas_price)
 # # Plotting seaborn
 st.subheader('Plotting')
 fig, ax=plt.subplots()
-ax = sns.lineplot(data = df_gas_price_daily)
+ax = sns.lineplot(data = df_gas_price_daily, x='date')
 #ax = sns.scatterplot(data = df_gas_price, x='date', y='e10', size='sex')
 st.pyplot(fig)
 # # Plotting plotly
