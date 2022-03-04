@@ -63,7 +63,7 @@ st.pyplot(fig)
 # # Plotting plotly
 
 # # Bar chart count of species per island
-st.bar_chart(df_gas_price.groupby('date').count())
+st.bar_chart(df_gas_price.groupby('date')['date'].count())
 # # Maps
 # st.map(df_penguin)
 # st.write('')
