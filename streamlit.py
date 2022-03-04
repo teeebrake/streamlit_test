@@ -34,7 +34,7 @@ st.write('Little webapp for exploring [Aral Tankstelle	ARAL	Prinzenstraße	29] (
 # Put image
 st.image('https://cdn.images.express.co.uk/img/dynamic/24/750x445/1075641.jpg')
 
-st.write ('Current price of Super at Ritterstraße', data_dict['prices']['e5'])
+st.write ('Current price of Super at Ritterstraße', data_dict['prices'][0])
 
 # Write heading for Data
 st.header('Data')
