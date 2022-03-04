@@ -26,21 +26,21 @@ response = requests.get(search_api_url, headers=headers, params=params, timeout=
 #print(response.headers)
 
 data_dict = response.json()
-current_time = datetime.now().time()
+current_time = datetime.datetime.now().time()
 #time.sleep(60)
         
 # Write a title
 st.write('Gas Price Explorer')
 # Write data taken from https://allisonhorst.github.io/palmerpenguins/
-st.write('Little webapp for exploring [Aral Tankstelle	ARAL	Prinzenstraße	29] (http://i4.wikimapia.org/?x=140836&y=85993&zoom=18&type=map&lng=0)')
+st.write(f'Little webapp for exploring [Aral Tankstelle	ARAL	Prinzenstraße	29] (href:http://i4.wikimapia.org/?x=140836&y=85993&zoom=18&type=map&lng=0)')
 
 #http://wikimapia.org/11225557/de/Aral-Tankstelle-Prinzenstraße-29
 # Put image
 st.image('https://cdn.images.express.co.uk/img/dynamic/24/750x445/1075641.jpg')
 
-st.write ('Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e5'])
-st.write ('Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e10'])
-st.write ('Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['diesel'])
+st.write (f'Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e5'])
+st.write (f'Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e10'])
+st.write (f'Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['diesel'])
 
 # Write heading for Data
 st.header('Data')
