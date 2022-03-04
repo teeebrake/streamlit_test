@@ -5,7 +5,7 @@ import seaborn as sns
 import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
-import datetime
+import datetime as datetime
 import requests
 import time
 
@@ -26,7 +26,7 @@ response = requests.get(search_api_url, headers=headers, params=params, timeout=
 #print(response.headers)
 
 data_dict = response.json()
-current_time = datetime.datetime.now().time()
+current_time = datetime.now().time()
 #time.sleep(60)
         
 # Write a title
@@ -63,7 +63,7 @@ st.pyplot(fig)
 # # Plotting plotly
 
 # # Bar chart count of species per island
-st.bar_chart(df_gas_price.groupby('e10')['date'].count())
+st.bar_chart(df_gas_price.groupby('date').count())
 # # Maps
 # st.map(df_penguin)
 # st.write('')
