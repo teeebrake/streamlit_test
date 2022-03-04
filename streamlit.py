@@ -46,7 +46,7 @@ st.write ('Current {current_time} price of Super at Ritterstraße', data_dict['p
 st.header('Data')
 # Read csv file and output a sample of 20 data points
 df_gas_price = pd.read_csv('ritter_all_14_22.csv', sep=',')
-st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price)
+st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.sample(20))
 #st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.sample(20))
 # Add a selectbox for type of fuel/gas
 
@@ -55,13 +55,15 @@ gas_type = st.selectbox('Choose a type of gas',['diesel','e5','e10'])
 df_gas_price = df_gas_price.filter(axis =1, like=gas_type) #[df_gas_price[:,'gas_type']]
 st.write(f'Subset of data for {gas_type}',df_gas_price)
 # # Plotting seaborn
-# st.subheader('Plotting')
-# fig, ax=plt.subplots()
-# ax = sns.scatterplot(data = df_penguin, x='bill_length_mm', y='island', size='sex')
-# st.pyplot(fig)
+st.subheader('Plotting')
+fig, ax=plt.subplots()
+ax = sns.scatterplot(data = df_gas_price, x='date', y='e10')
+#ax = sns.scatterplot(data = df_gas_price, x='date', y='e10', size='sex')
+st.pyplot(fig)
 # # Plotting plotly
 
 # # Bar chart count of species per island
+st.bar_chart(df_gas_price.groupby('e10')['date'].count())
 # # Maps
 # st.map(df_penguin)
 # st.write('')
