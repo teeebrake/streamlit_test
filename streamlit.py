@@ -45,7 +45,7 @@ st.write (f'At {current_time} price of Diesel at Ritterstraße', data_dict['pric
 # Write heading for Data
 st.header('Data')
 # Read csv file and output a sample of 20 data points
-df_gas_price = pd.read_csv('ritter_all_14_22.csv', sep=',')
+df_gas_price = pd.read_csv('ritter_all_streamlit.csv', sep=',')
 st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.sample(20))
 #st.write('Display a sample of data points from `tankerkoenig.de`', df_gas_price.sample(20))
 # Add a selectbox for type of fuel/gas
