@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import datetime as datetime
 import requests
-import time
+from time import strftime 
 
 #while True:
 #connect to tankerkoenig.de api and retrieve live infos, store them in a dictionary
@@ -26,7 +26,7 @@ response = requests.get(search_api_url, headers=headers, params=params, timeout=
 #print(response.headers)
 
 data_dict = response.json()
-current_time = datetime.datetime.now().time()
+current_time = datetime.datetime.now().time().strftime('%Y-%m-%d %H:%M:%S')
 #time.sleep(60)
         
 # Write a title
