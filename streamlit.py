@@ -9,7 +9,7 @@ import datetime
 import requests
 import time
 
-while True:
+#while True:
         #connect to tankerkoenig.de api and retrieve live infos, store them in a dictionary
 
         api_key = 'dc0d5dcb-4386-6f2a-74df-83221c34fd55'
@@ -28,7 +28,7 @@ while True:
 
         data_dict = response.json()
         current_time = datetime.datetime.now().time()
-        time.sleep(60)
+        #time.sleep(60)
         
 # Write a title
 st.write('Gas Price Explorer')
@@ -40,6 +40,8 @@ st.write('Little webapp for exploring [Aral Tankstelle	ARAL	Prinzenstraße	29] (
 st.image('https://cdn.images.express.co.uk/img/dynamic/24/750x445/1075641.jpg')
 
 st.write ('Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e5'])
+st.write ('Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e10'])
+st.write ('Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['diesel'])
 
 # Write heading for Data
 st.header('Data')
