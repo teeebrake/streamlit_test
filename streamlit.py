@@ -24,7 +24,7 @@ print(response.status_code)
 print(response.headers)
 
 data_dict = response.json()
-
+current_time = datetime.datetime.now()
 # Write a title
 st.write('Gas Price Explorer')
 # Write data taken from https://allisonhorst.github.io/palmerpenguins/
@@ -34,7 +34,7 @@ st.write('Little webapp for exploring [Aral Tankstelle	ARAL	Prinzenstraße	29] (
 # Put image
 st.image('https://cdn.images.express.co.uk/img/dynamic/24/750x445/1075641.jpg')
 
-st.write ('Current price of Super at Ritterstraße', data_dict['prices'])
+st.write ('Current {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e5'])
 
 # Write heading for Data
 st.header('Data')
