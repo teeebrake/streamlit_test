@@ -15,9 +15,9 @@ api_key = 'dc0d5dcb-4386-6f2a-74df-83221c34fd55'
 
 headers = {'Authorization': 'Bearer {}'.format(api_key)}
 search_api_url = 'https://creativecommons.tankerkoenig.de/json/prices.php?'
-params = {'ids': '813ed58c-b58d-4d17-895b-2078cb302649',
-        'apikey': 'dc0d5dcb-4386-6f2a-74df-83221c34fd55',
-                  }
+        params = {'ids': '813ed58c-b58d-4d17-895b-2078cb302649',
+                'apikey': 'dc0d5dcb-4386-6f2a-74df-83221c34fd55',
+                          }
 
 response = requests.get(search_api_url, headers=headers, params=params, timeout=5)
 
@@ -26,7 +26,7 @@ response = requests.get(search_api_url, headers=headers, params=params, timeout=
 #print(response.headers)
 
 data_dict = response.json()
-current_time = datetime.datetime.now().time().strftime('%H:%M:%S')
+current_time = datetime.datetime.now().time('Europe/Berlin').strftime('%H:%M:%S')
 #time.sleep(60)
         
 # Write a title
@@ -57,7 +57,7 @@ st.write(f'Subset of data for {gas_type}',df_gas_price)
 # # Plotting seaborn
 st.subheader('Plotting')
 fig, ax=plt.subplots()
-ax = sns.lineplot(data = df_gas_price_daily, x='date')
+ax = sns.lineplot(data = df_gas_price_daily)
 #ax = sns.scatterplot(data = df_gas_price, x='date', y='e10', size='sex')
 st.pyplot(fig)
 # # Plotting plotly
