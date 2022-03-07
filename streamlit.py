@@ -39,7 +39,7 @@ st.write(f'Little webapp for exploring [Aral Tankstelle	ARAL	Prinzenstraße	29] 
 # Put image
 st.image('https://cdn.images.express.co.uk/img/dynamic/24/750x445/1075641.jpg')
 
-col1, col2, col3 = st.beta_columns((1,1,1))
+col1, col2, col3 = st.columns((1,1,1))
 with col1:
   st.write (f'At {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e5'])
 with col2:
