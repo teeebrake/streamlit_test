@@ -15,9 +15,9 @@ api_key = 'dc0d5dcb-4386-6f2a-74df-83221c34fd55'
 
 headers = {'Authorization': 'Bearer {}'.format(api_key)}
 search_api_url = 'https://creativecommons.tankerkoenig.de/json/prices.php?'
-        params = {'ids': '813ed58c-b58d-4d17-895b-2078cb302649',
+params = {'ids': '813ed58c-b58d-4d17-895b-2078cb302649',
                 'apikey': 'dc0d5dcb-4386-6f2a-74df-83221c34fd55',
-                          }
+         }
 
 response = requests.get(search_api_url, headers=headers, params=params, timeout=5)
 
