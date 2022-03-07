@@ -5,7 +5,7 @@ import seaborn as sns
 import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
-import datetime as datetime
+import datetime as datetime, timezone
 import requests
 from time import strftime 
 
@@ -26,7 +26,7 @@ response = requests.get(search_api_url, headers=headers, params=params, timeout=
 #print(response.headers)
 
 data_dict = response.json()
-current_time = datetime.datetime.now().time('Europe/Berlin').strftime('%H:%M:%S')
+current_time = datetime.datetime.now().astimezone(timezone('Europe/Berlin')).strftime('%H:%M:%S')
 #time.sleep(60)
         
 # Write a title
