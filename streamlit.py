@@ -39,9 +39,13 @@ st.write(f'Little webapp for exploring [Aral Tankstelle	ARAL	Prinzenstraße	29] 
 # Put image
 st.image('https://cdn.images.express.co.uk/img/dynamic/24/750x445/1075641.jpg')
 
-st.write (f'At {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e5'])
-st.write (f'At {current_time} price of SuperE10 at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e10'])
-st.write (f'At {current_time} price of Diesel at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['diesel'])
+col1, col2, col3 = st.beta_columns((1,1,1))
+with col1:
+  st.write (f'At {current_time} price of Super at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e5'])
+with col2:
+  st.write (f'At {current_time} price of SuperE10 at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['e10'])
+with col3:
+  st.write (f'At {current_time} price of Diesel at Ritterstraße', data_dict['prices']['813ed58c-b58d-4d17-895b-2078cb302649']['diesel'])
 
 # Write heading for Data
 st.header('Data')
@@ -67,6 +71,7 @@ st.pyplot(fig)
 st.bar_chart(df_gas_price['date'])
 #st.bar_chart(df_gas_price.groupby('date')['date'].count())
 # # Maps
+
 # st.map(df_penguin)
 # st.write('')
 # # pydeck
