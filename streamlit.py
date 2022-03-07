@@ -5,7 +5,8 @@ import seaborn as sns
 import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
-import datetime as datetime, timezone
+import datetime as datetime
+from pytz import timezone
 import requests
 from time import strftime 
 
